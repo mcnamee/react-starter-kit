@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Change 'build' to be the folder you will use
+  RewriteCond %{REQUEST_URI} !^/build/
+  RewriteRule ^(.*)$ /build/$1
+
+  # Change 'your-domain.com' to this site's primary domain
+  RewriteCond %{HTTP_HOST} ^(www.)?your-domain.com$
+
+  RewriteCond %{HTTP_HOST} ^(www.)?your-domain.com$
+  RewriteRule ^(/)?$ build/index.html [L]
+</IfModule>
