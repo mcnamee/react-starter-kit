@@ -42,11 +42,11 @@ The project is _super_ helpful to kick-start your next web app, as it provides a
 yarn install
 
 # Starts are local live-reload server at:
-# http://localhost:3001
+# http://localhost:3000
 yarn start
 ```
 
-Via webpack, starts a localhost server on port 3001 [http://localhost:3001](http://localhost:3001).
+Via webpack, starts a localhost server on port 3000 [http://localhost:3000](http://localhost:3000).
 
 - Save code and it auto refreshes
 - Install [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en) into Chrome to see the state of Redux
