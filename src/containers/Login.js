@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import Layout from '../components/Login';
 import { login } from '../actions/member';
 
 class Login extends Component {
   static propTypes = {
-    Layout: PropTypes.func.isRequired,
     member: PropTypes.shape({}).isRequired,
     onFormSubmit: PropTypes.func.isRequired,
     isLoading: PropTypes.bool.isRequired,
@@ -26,7 +26,6 @@ class Login extends Component {
   render = () => {
     const {
       member,
-      Layout,
       isLoading,
       successMessage,
     } = this.props;

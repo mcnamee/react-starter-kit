@@ -1,7 +1,7 @@
 /* global window */
 import { createStore, applyMiddleware, compose } from 'redux';
 import { persistStore, persistCombineReducers } from 'redux-persist';
-import storage from 'redux-persist/es/storage'; // default: localStorage if web, AsyncStorage if react-native
+import storage from 'redux-persist/es/storage'; // default: localStorage
 import thunk from 'redux-thunk';
 import reducers from '../reducers';
 
@@ -16,11 +16,13 @@ const reducer = persistCombineReducers(config, reducers);
 
 const middleware = [thunk];
 
+
 const configureStore = () => {
+  const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
   const store = createStore(
     reducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-    compose(applyMiddleware(...middleware)),
+    composeEnhancer(applyMiddleware(...middleware)),
   );
 
   const persistor = persistStore(

@@ -7,24 +7,15 @@ import TemplateSidebar from '../components/TemplateSidebar';
 
 // Routes
 import Home from '../components/Home';
+import SignUp from '../containers/SignUp';
+import Login from '../containers/Login';
+import ForgotPassword from '../containers/ForgotPassword';
+import UpdateProfile from '../containers/UpdateProfile';
+import Error from '../components/Error';
 
 import RecipesContainer from '../containers/Recipes';
 import RecipesComponent from '../components/Recipes';
 import RecipeViewComponent from '../components/Recipe';
-
-import SignUpContainer from '../containers/SignUp';
-import SignUpComponent from '../components/SignUp';
-
-import LoginContainer from '../containers/Login';
-import LoginComponent from '../components/Login';
-
-import ForgotPasswordContainer from '../containers/ForgotPassword';
-import ForgotPasswordComponent from '../components/ForgotPassword';
-
-import UpdateProfileContainer from '../containers/UpdateProfile';
-import UpdateProfileComponent from '../components/UpdateProfile';
-
-import Error from '../components/Error';
 
 const Index = () => (
   <Switch>
@@ -41,7 +32,7 @@ const Index = () => (
       path="/sign-up"
       render={props => (
         <TemplateNothing>
-          <SignUpContainer {...props} Layout={SignUpComponent} />
+          <SignUp {...props} />
         </TemplateNothing>
       )}
     />
@@ -49,7 +40,7 @@ const Index = () => (
       path="/login"
       render={props => (
         <TemplateNothing>
-          <LoginContainer {...props} Layout={LoginComponent} />
+          <Login {...props} />
         </TemplateNothing>
       )}
     />
@@ -57,7 +48,7 @@ const Index = () => (
       path="/forgot-password"
       render={props => (
         <TemplateNothing>
-          <ForgotPasswordContainer {...props} Layout={ForgotPasswordComponent} />
+          <ForgotPassword {...props} />
         </TemplateNothing>
       )}
     />
@@ -65,7 +56,7 @@ const Index = () => (
       path="/update-profile"
       render={props => (
         <TemplateSidebar>
-          <UpdateProfileContainer {...props} Layout={UpdateProfileComponent} />
+          <UpdateProfile {...props} />
         </TemplateSidebar>
       )}
     />

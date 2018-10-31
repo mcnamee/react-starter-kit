@@ -8,9 +8,9 @@
   RewriteCond %{REQUEST_URI} !^/build/
   RewriteRule ^(.*)$ /build/$1
 
-  # Change 'your-domain.com' to this site's primary domain
-  RewriteCond %{HTTP_HOST} ^(www.)?your-domain.com$
+  # Change 'react-start-kit2.localhost' to this site's primary domain
+  RewriteCond %{HTTP_HOST} ^(www.)?react-start-kit2.localhost$
 
-  RewriteCond %{HTTP_HOST} ^(www.)?your-domain.com$
+  RewriteCond %{HTTP_HOST} ^(www.)?react-start-kit2.localhost$
   RewriteRule ^(/)?$ build/index.html [L]
 </IfModule>

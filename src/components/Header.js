@@ -100,9 +100,9 @@ class Header extends Component {
                       </DropdownItem>
                       <DropdownItem divider />
                       <DropdownItem>
-                        <a onClick={this.onLogout}>
+                        <button onClick={this.onLogout}>
                           Logout
-                        </a>
+                        </button>
                       </DropdownItem>
                     </div>
                     )
