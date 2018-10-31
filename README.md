@@ -30,8 +30,6 @@ The project is _super_ helpful to kick-start your next web app, as it provides a
     - [Redux Persist](https://github.com/rt2zz/redux-persist)
 - __UI Toolkit__
     - [Bootstrap](https://getbootstrap.com/) for web
-- __Code Linting__ with
-    - [Airbnb's JS Linting](https://github.com/airbnb/javascript) guidelines
 
 ---
 
