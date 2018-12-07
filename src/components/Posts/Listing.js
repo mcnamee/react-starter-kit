@@ -10,18 +10,20 @@ import {
   CardTitle,
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import Error from './Error';
+import Error from '../Generic/Error';
 
-const RecipeListing = ({ error, loading, recipes }) => {
+const PostListing = ({ error, loading, posts }) => {
   // Error
   if (error) return <Error content={error} />;
 
   // Build Cards for Listing
-  const cards = recipes.map(item => (
+  const cards = posts.map(item => (
     <Card key={`${item.id}`}>
-      <Link to={`/recipe/${item.id}`}>
-        <CardImg top src={item.image} alt={item.title} />
-      </Link>
+      {!!item.image &&
+        <Link to={`/post/${item.id}`}>
+          <CardImg top src={item.image} alt={item.title} />
+        </Link>
+      }
       <CardBody>
         <CardTitle>
           {item.title}
@@ -29,7 +31,7 @@ const RecipeListing = ({ error, loading, recipes }) => {
         <CardText>
           {item.body}
         </CardText>
-        <Link className="btn btn-primary" to={`/recipe/${item.id}`}>
+        <Link className="btn btn-primary" to={`/post/${item.id}`}>
           View Recipe
           {' '}
           <i className="icon-arrow-right" />
@@ -44,10 +46,10 @@ const RecipeListing = ({ error, loading, recipes }) => {
       <Row>
         <Col sm="12">
           <h1>
-            Recipes
+            Posts
           </h1>
           <p>
-            The following data is read directly from Firebase.
+            The following data is read directly from an API.
           </p>
         </Col>
       </Row>
@@ -60,14 +62,14 @@ const RecipeListing = ({ error, loading, recipes }) => {
   );
 };
 
-RecipeListing.propTypes = {
+PostListing.propTypes = {
   error: PropTypes.string,
   loading: PropTypes.bool.isRequired,
-  recipes: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  posts: PropTypes.arrayOf(PropTypes.shape()).isRequired,
 };
 
-RecipeListing.defaultProps = {
+PostListing.defaultProps = {
   error: null,
 };
 
-export default RecipeListing;
+export default PostListing;

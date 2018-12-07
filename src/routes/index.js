@@ -2,22 +2,21 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 // Templates
-import TemplateNothing from '../components/TemplateNothing';
-import TemplateSidebar from '../components/TemplateSidebar';
+import TemplateNothing from '../components/Templates/Nothing';
+import TemplateSidebar from '../components/Templates/Sidebar';
 
 // Routes
-import Home from '../components/Home';
+import Home from '../components/Generic/Home';
+import Error from '../components/Generic/Error';
+
 import SignUp from '../containers/SignUp';
 import Login from '../containers/Login';
-import ForgotPassword from '../containers/ForgotPassword';
-import UpdateProfile from '../containers/UpdateProfile';
-import Error from '../components/Error';
 
-import RecipesContainer from '../containers/Recipes';
-import RecipesComponent from '../components/Recipes';
-import RecipeViewComponent from '../components/Recipe';
+import PostsContainer from '../containers/Posts';
+import PostListingComponent from '../components/Posts/Listing';
+import PostViewComponent from '../components/Posts/View';
 
-const Index = () => (
+export default () => (
   <Switch>
     <Route
       exact
@@ -45,34 +44,18 @@ const Index = () => (
       )}
     />
     <Route
-      path="/forgot-password"
-      render={props => (
-        <TemplateNothing>
-          <ForgotPassword {...props} />
-        </TemplateNothing>
-      )}
-    />
-    <Route
-      path="/update-profile"
+      path="/posts"
       render={props => (
         <TemplateSidebar>
-          <UpdateProfile {...props} />
+          <PostsContainer {...props} Layout={PostListingComponent} />
         </TemplateSidebar>
       )}
     />
     <Route
-      path="/recipes"
+      path="/post/:id"
       render={props => (
         <TemplateSidebar>
-          <RecipesContainer {...props} Layout={RecipesComponent} />
-        </TemplateSidebar>
-      )}
-    />
-    <Route
-      path="/recipe/:id"
-      render={props => (
-        <TemplateSidebar>
-          <RecipesContainer {...props} Layout={RecipeViewComponent} />
+          <PostsContainer {...props} Layout={PostViewComponent} />
         </TemplateSidebar>
       )}
     />
@@ -85,5 +68,3 @@ const Index = () => (
     />
   </Switch>
 );
-
-export default Index;

@@ -1,48 +1,24 @@
-import Store from '../store/member';
-
-export const initialState = Store;
-
-export default function userReducer(state = initialState, action) {
+export default (state = false, action) => {
   switch (action.type) {
-    case 'USER_LOGIN': {
+    /**
+     * Replace Member
+     */
+    case 'MEMBER_REPLACE': {
       if (action.data) {
         return {
-          ...state,
-          loading: false,
-          error: null,
-          uid: action.data.uid,
+          firstName: action.data.first_name,
+          lastName: action.data.last_name,
           email: action.data.email,
-          emailVerified: action.data.emailVerified,
         };
       }
-      return initialState;
+      return false;
     }
-    case 'USER_DETAILS_UPDATE': {
-      if (action.data) {
-        return {
-          ...state,
-          loading: false,
-          error: null,
-          firstName: action.data.firstName,
-          lastName: action.data.lastName,
-          signedUp: action.data.signedUp,
-          role: action.data.role,
-        };
-      }
-      return initialState;
-    }
-    case 'USER_ERROR': {
-      if (action.data) {
-        return {
-          ...state,
-          loading: false,
-          error: action.data,
-        };
-      }
-      return initialState;
-    }
-    case 'USER_RESET': {
-      return initialState;
+
+    /**
+     * Remove Member data
+     */
+    case 'MEMBER_RESET': {
+      return false;
     }
     default:
       return state;

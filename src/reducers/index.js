@@ -1,19 +1,22 @@
-import status from './status';
+import { persistCombineReducers } from 'redux-persist';
+import storage from 'redux-persist/es/storage';
+
+import rehydrated from './rehydrated';
 import member from './member';
-import recipes from './recipes';
+import posts from './posts';
 
-const rehydrated = (state = false, action) => {
-  switch (action.type) {
-    case 'persist/REHYDRATE':
-      return true;
-    default:
-      return state;
-  }
-};
-
-export default {
+// Add each of the reducers
+const reducers = {
   rehydrated,
-  status,
   member,
-  recipes,
+  posts,
 };
+
+// Setup redux persist config
+const persistConfig = {
+  key: 'root',
+  storage,
+  blacklist: [],
+};
+
+export default persistCombineReducers(persistConfig, reducers);

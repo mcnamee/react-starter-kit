@@ -14,10 +14,11 @@ import {
   CardHeader,
 } from 'reactstrap';
 import { Link, withRouter } from 'react-router-dom';
-import Loading from './Loading';
+import Loading from '../Generic/Loading';
 
 class SignUp extends React.Component {
   static propTypes = {
+    success: PropTypes.string,
     error: PropTypes.string,
     loading: PropTypes.bool.isRequired,
     onFormSubmit: PropTypes.func.isRequired,
@@ -27,6 +28,7 @@ class SignUp extends React.Component {
   }
 
   static defaultProps = {
+    success: null,
     error: null,
   }
 
@@ -44,22 +46,20 @@ class SignUp extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
-  }
+  handleChange = e => this.setState({ [e.target.name]: e.target.value })
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
     const { onFormSubmit, history } = this.props;
-    onFormSubmit(this.state)
-      .then(() => history.push('/login'))
-      .catch(e => console.log(`Error: ${e}`));
+
+    try {
+      await onFormSubmit(this.state);
+      setTimeout(() => history.push('/'), 1000); // Redirect after 1s
+    } catch (error) { /* */ }
   }
 
   render() {
-    const { loading, error } = this.props;
+    const { loading, error, success } = this.props;
     const {
       firstName,
       lastName,
@@ -80,6 +80,11 @@ class SignUp extends React.Component {
                 Sign Up
               </CardHeader>
               <CardBody>
+                {!!success && (
+                <Alert color="success">
+                  {success}
+                </Alert>
+                )}
                 {!!error && (
                   <Alert color="danger">
                     {error}
@@ -163,7 +168,7 @@ class SignUp extends React.Component {
                   <Col sm="12">
                     Already have an account?
                     <Link to="/login">
-                      Login
+                      &nbsp;Login
                     </Link>
                   </Col>
                 </Row>

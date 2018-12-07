@@ -40,15 +40,10 @@ const About = () => (
         <h3>
           <i className="icon-fire" />
           {' '}
-          Firebase
+          API
         </h3>
         <p>
-          Firebase is all ready to go with examples on how to read/write data to/from Firebase.
-        </p>
-        <p>
-          <a target="_blank" rel="noopener noreferrer" href="https://firebase.google.com/docs/database/web/start" className="btn btn-primary">
-            Firebase Docs
-          </a>
+          A mock API is all ready to go with examples on how to read/write data to/from a Rest API.
         </p>
       </Col>
       <Col xs="12" md="4" className="pt-3 pt-md-0">
@@ -106,13 +101,7 @@ const About = () => (
           Auth
         </h3>
         <p>
-          Most apps need user authentication. This one comes ready to go with Firebase Auth - but
-          you can easily change that within the `/actions/member.js`
-        </p>
-        <p>
-          <a target="_blank" rel="noopener noreferrer" href="https://firebase.google.com/docs/auth/" className="btn btn-primary">
-            Firebase Auth Docs
-          </a>
+          Most apps need user authentication. This one comes ready to go with ready to use components.
         </p>
       </Col>
     </Row>

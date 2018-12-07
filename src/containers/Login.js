@@ -2,42 +2,42 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import Layout from '../components/Login';
-import { login } from '../actions/member';
+import Layout from '../components/Auth/Login';
+import * as MemberActions from '../actions/member';
 
 class Login extends Component {
   static propTypes = {
     member: PropTypes.shape({}).isRequired,
-    onFormSubmit: PropTypes.func.isRequired,
-    isLoading: PropTypes.bool.isRequired,
-    successMessage: PropTypes.string.isRequired,
+    login: PropTypes.func.isRequired,
   }
 
   state = {
-    errorMessage: null,
+    loading: false,
+    error: null,
+    success: null,
   }
 
-  onFormSubmit = (data) => {
-    const { onFormSubmit } = this.props;
-    return onFormSubmit(data)
-      .catch((err) => { this.setState({ errorMessage: err }); throw err; });
+  onFormSubmit = async (data) => {
+    const { login } = this.props;
+    try {
+      const success = await login(data);
+      this.setState({ error: null, loading: false, success });
+    } catch (error) {
+      this.setState({ error: error.message, loading: false, success: null });
+      throw new Error();
+    }
   }
 
   render = () => {
-    const {
-      member,
-      isLoading,
-      successMessage,
-    } = this.props;
-
-    const { errorMessage } = this.state;
+    const { member } = this.props;
+    const { error, loading, success } = this.state;
 
     return (
       <Layout
+        error={error}
         member={member}
-        loading={isLoading}
-        error={errorMessage}
-        success={successMessage}
+        loading={loading}
+        success={success}
         onFormSubmit={this.onFormSubmit}
       />
     );
@@ -46,12 +46,10 @@ class Login extends Component {
 
 const mapStateToProps = state => ({
   member: state.member || {},
-  isLoading: state.status.loading || false,
-  successMessage: state.status.success || '',
 });
 
 const mapDispatchToProps = {
-  onFormSubmit: login,
+  login: MemberActions.login,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

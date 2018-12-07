@@ -14,7 +14,7 @@ import {
   CardHeader,
 } from 'reactstrap';
 import { Link, withRouter } from 'react-router-dom';
-import Loading from './Loading';
+import Loading from '../Generic/Loading';
 
 class Login extends React.Component {
   static propTypes = {
@@ -47,18 +47,16 @@ class Login extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
-  }
+  handleChange = e => this.setState({ [e.target.name]: e.target.value })
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
     const { onFormSubmit, history } = this.props;
-    onFormSubmit(this.state)
-      .then(() => history.push('/'))
-      .catch(e => console.log(`Error: ${e}`));
+
+    try {
+      await onFormSubmit(this.state);
+      setTimeout(() => history.push('/'), 1000); // Redirect after 1s
+    } catch (error) { /* */ }
   }
 
   render() {
@@ -127,11 +125,6 @@ class Login extends React.Component {
                     {' '}
                     <Link to="/sign-up">
                       Sign Up
-                    </Link>
-                  </Col>
-                  <Col sm="6" className="text-right">
-                    <Link to="/forgot-password">
-                      Forgot Password?
                     </Link>
                   </Col>
                 </Row>

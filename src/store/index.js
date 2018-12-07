@@ -1,37 +1,16 @@
 /* global window */
 import { createStore, applyMiddleware, compose } from 'redux';
-import { persistStore, persistCombineReducers } from 'redux-persist';
-import storage from 'redux-persist/es/storage'; // default: localStorage
+import { persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';
-import reducers from '../reducers';
+import reducers from '../reducers/';
 
-// Redux Persist config
-const config = {
-  key: 'root',
-  storage,
-  blacklist: ['status'],
-};
+// Allows us to use devtools when installed
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const reducer = persistCombineReducers(config, reducers);
+// Init Redux Store (and apply middleware)
+const store = createStore(reducers, composeEnhancer(applyMiddleware(thunk)));
 
-const middleware = [thunk];
+// Init Redux Persist
+const persistor = persistStore(store, null, () => { store.getState(); });
 
-
-const configureStore = () => {
-  const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-  const store = createStore(
-    reducer,
-    composeEnhancer(applyMiddleware(...middleware)),
-  );
-
-  const persistor = persistStore(
-    store,
-    null,
-    () => { store.getState(); },
-  );
-
-  return { persistor, store };
-};
-
-export default configureStore;
+export { store, persistor };
