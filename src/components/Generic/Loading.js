@@ -1,16 +1,11 @@
 import React from 'react';
-import { Row, Col, Progress } from 'reactstrap';
+import Loading from '../UI/Loading';
+import TemplateNothing from '../Templates/Nothing';
 
-const Loading = () => (
-  <Row>
-    <Col md={{ size: 6, offset: 3 }}>
-      <div className="page-is-loading">
-        <Progress bar animated value="100">
-          Loading
-        </Progress>
-      </div>
-    </Col>
-  </Row>
+const LoadingScreen = () => (
+  <TemplateNothing>
+    <Loading />
+  </TemplateNothing>
 );
 
-export default Loading;
+export default LoadingScreen;

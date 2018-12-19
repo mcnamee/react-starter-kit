@@ -14,7 +14,8 @@ import {
   CardHeader,
 } from 'reactstrap';
 import { Link, withRouter } from 'react-router-dom';
-import Loading from '../Generic/Loading';
+import Loading from '../UI/Loading';
+import TemplateNothing from '../Templates/Nothing';
 
 class SignUp extends React.Component {
   static propTypes = {
@@ -72,7 +73,7 @@ class SignUp extends React.Component {
     if (loading) return <Loading />;
 
     return (
-      <div>
+      <TemplateNothing>
         <Row>
           <Col lg={{ size: 6, offset: 3 }}>
             <Card>
@@ -176,7 +177,7 @@ class SignUp extends React.Component {
             </Card>
           </Col>
         </Row>
-      </div>
+      </TemplateNothing>
     );
   }
 }

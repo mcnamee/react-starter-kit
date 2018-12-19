@@ -10,11 +10,15 @@ import {
   CardTitle,
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import Error from '../Generic/Error';
+import Error from '../UI/Error';
+import ErrorMessages from '../../constants/errors';
+import TemplateSidebar from '../Templates/Sidebar';
 
-const PostListing = ({ error, loading, posts }) => {
+const PostListingScreen = ({ posts, error, loading }) => {
   // Error
   if (error) return <Error content={error} />;
+
+  if (!posts) return <Error content={ErrorMessages.missingPosts} />;
 
   // Build Cards for Listing
   const cards = posts.map(item => (
@@ -32,7 +36,7 @@ const PostListing = ({ error, loading, posts }) => {
           {item.body}
         </CardText>
         <Link className="btn btn-primary" to={`/post/${item.id}`}>
-          View Recipe
+          View Post
           {' '}
           <i className="icon-arrow-right" />
         </Link>
@@ -42,7 +46,7 @@ const PostListing = ({ error, loading, posts }) => {
 
   // Show Listing
   return (
-    <div>
+    <TemplateSidebar>
       <Row>
         <Col sm="12">
           <h1>
@@ -58,18 +62,19 @@ const PostListing = ({ error, loading, posts }) => {
           {cards}
         </Col>
       </Row>
-    </div>
+    </TemplateSidebar>
   );
 };
 
-PostListing.propTypes = {
+PostListingScreen.propTypes = {
   error: PropTypes.string,
-  loading: PropTypes.bool.isRequired,
+  loading: PropTypes.bool,
   posts: PropTypes.arrayOf(PropTypes.shape()).isRequired,
 };
 
-PostListing.defaultProps = {
+PostListingScreen.defaultProps = {
   error: null,
+  loading: false,
 };
 
-export default PostListing;
+export default PostListingScreen;

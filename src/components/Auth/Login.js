@@ -14,9 +14,10 @@ import {
   CardHeader,
 } from 'reactstrap';
 import { Link, withRouter } from 'react-router-dom';
-import Loading from '../Generic/Loading';
+import Loading from '../UI/Loading';
+import TemplateNothing from '../Templates/Nothing';
 
-class Login extends React.Component {
+class LoginScreen extends React.Component {
   static propTypes = {
     member: PropTypes.shape({
       email: PropTypes.string,
@@ -67,7 +68,7 @@ class Login extends React.Component {
     if (loading) return <Loading />;
 
     return (
-      <div>
+      <TemplateNothing>
         <Row>
           <Col lg={{ size: 6, offset: 3 }}>
             <Card>
@@ -132,9 +133,9 @@ class Login extends React.Component {
             </Card>
           </Col>
         </Row>
-      </div>
+      </TemplateNothing>
     );
   }
 }
 
-export default withRouter(Login);
+export default withRouter(LoginScreen);

@@ -14,12 +14,12 @@ axios.defaults.headers.common.Authorization = localStorage.getItem('authToken') 
 axios.interceptors.response.use(
   (res) => {
     // Status code isn't a success code - throw error
-    if (!`${res.status}`.startsWith('2')) throw res.data;
+    if (!`${res.status}`.startsWith('2')) { throw res; }
 
     // Otherwise just return the data
-    return res.data;
+    return res;
   },
-  err => Promise.reject(err),
+  (err) => Promise.reject(err),
 );
 
 export default axios;

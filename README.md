@@ -22,6 +22,8 @@ This boilerplate launches a [React web app](https://reactjs.org/).
 
 The project is _super_ helpful to kick-start your next web app, as it provides a lot of the common tools you may reach for, all ready to go. Specifically:
 
+- __Type checking__
+    - [Typescript](https://typescriptlang.org)
 - __Flux architecture__
     - [Redux](https://redux.js.org/docs/introduction/)
 - __Routing and navigation__
@@ -55,6 +57,31 @@ Via webpack, starts a localhost server on port 3000 [http://localhost:3000](http
 ```bash
 yarn run build
 ```
+
+---
+
+## More information
+
+### File structure
+
+- `/public` contains static assets like the HTML page we're planning to deploy to, or images. You can delete any file in this folder apart from `index.html`.
+- `/src` contains our TypeScript and CSS code. `index.tsx` is the entry-point for our file, and is mandatory.
+    - `/actions` - Redux Actions - payloads of information that send data _from_ your application _to_ your store. [Read More &rarr;](https://redux.js.org/docs/basics/Actions.html)
+    - `/constants` - App-wide variables
+    - `/components` - 'Dumb-components' / presentational. [Read More &rarr;](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
+    - `/containers` - 'Smart-components' that connect business logic to presentation [Read More &rarr;](https://redux.js.org/docs/basics/UsageWithReact.html#presentational-and-container-components)
+    - `/images` - ...
+    - `/lib` - Utils and custom libraries
+    - `/reducers`- Redux Reducers - Actions dispatch to reducers, which actually change the state [Read More &rarr;](https://redux.js.org/docs/basics/Reducers.html)
+    - `/routes`- wire up the router with any & all screens [Read More &rarr;](https://github.com/aksonov/react-native-router-flux)
+    - `/store`- Redux Store - hooks up the stores and provides initial/template states [Read More &rarr;](https://redux.js.org/docs/basics/Store.html)
+    - `/styles`- all the SCSS you could dream of
+    - `index.tsx` - The starting place for our app
+    - `react-app-env.d.ts` - default app-wide type definitions
+- `/tests` contains all of our tests, where the test file matches the resptive file from `/src`
+- `/tsconfig.json` contains TypeScript-specific options for our project.
+    - We also have a `tsconfig.prod.json` and a `tsconfig.test.json` in case we want to make any tweaks to our production builds, or our test builds.
+- `/tslint.json` stores the settings that our linter, [TSLint](https://github.com/palantir/tslint), will use.
 
 ---
 

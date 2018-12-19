@@ -1,8 +1,9 @@
 import React from 'react';
 import { Row, Col, Jumbotron } from 'reactstrap';
+import TemplateSidebar from '../Templates/Sidebar';
 
-const About = () => (
-  <div>
+const HomeScreen = () => (
+  <TemplateSidebar>
     <Row>
       <Jumbotron className="bg-primary text-white">
         <h1>
@@ -126,7 +127,7 @@ const About = () => (
         </p>
       </Col>
     </Row>
-  </div>
+  </TemplateSidebar>
 );
 
-export default About;
+export default HomeScreen;

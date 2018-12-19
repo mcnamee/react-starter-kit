@@ -10,14 +10,14 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import ErrorMessages from '../../constants/errors';
-import Loading from '../Generic/Loading';
-import Error from '../Generic/Error';
+import Loading from '../UI/Loading';
+import Error from '../UI/Error';
+import TemplateSidebar from '../Templates/Sidebar';
 
-const PostView = ({
+const PostViewScreen = ({
   error,
   loading,
-  posts,
-  postId,
+  post,
 }) => {
   // Loading
   if (loading) return <Loading />;
@@ -25,17 +25,11 @@ const PostView = ({
   // Error
   if (error) return <Error content={error} />;
 
-  // Get this Post from all posts
-  let post = null;
-  if (postId && posts) {
-    post = posts.find(item => parseInt(item.id, 10) === parseInt(postId, 10));
-  }
-
   // Post not found
   if (!post) return <Error content={ErrorMessages.post404} />;
 
   return (
-    <div>
+    <TemplateSidebar>
       <Row>
         <Col sm="12">
           <h1>
@@ -71,19 +65,18 @@ const PostView = ({
           </Link>
         </Col>
       </Row>
-    </div>
+    </TemplateSidebar>
   );
 };
 
-PostView.propTypes = {
+PostViewScreen.propTypes = {
   error: PropTypes.string,
   loading: PropTypes.bool.isRequired,
-  postId: PropTypes.string.isRequired,
-  posts: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  post: PropTypes.arrayOf(PropTypes.shape()).isRequired,
 };
 
-PostView.defaultProps = {
+PostViewScreen.defaultProps = {
   error: null,
 };
 
-export default PostView;
+export default PostViewScreen;

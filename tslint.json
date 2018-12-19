@@ -1,0 +1,20 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended",
+        "tslint-react"
+    ],
+    "jsRules": {},
+    "rules": {
+      "jsx-wrap-multiline": false,
+      "quotemark": [true, "single", "jsx-double"]
+    },
+    "rulesDirectory": [],
+    "linterOptions": {
+        "exclude": [
+            "config/**/*.js",
+            "node_modules/**/*.ts",
+            "coverage/lcov-report/*.js"
+        ]
+    }
+}
