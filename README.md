@@ -1,4 +1,4 @@
-# MattsSickWeb - React Web App
+# React Starter Kit
 
 ---
 

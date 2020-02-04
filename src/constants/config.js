@@ -13,7 +13,7 @@ if (host.includes('stage.')) env = 'stage';
  */
 export default {
   // App Details
-  appName: 'MattsSickWeb',
+  appName: 'ReactStarterKit',
 
   // Build Configuration - eg. Debug or Release?
   isDevEnv: (env === 'development'),

@@ -29,7 +29,7 @@ Template.propTypes = {
 };
 
 Template.defaultProps = {
-  pageTitle: 'MattsSickWeb',
+  pageTitle: 'ReactStarterKit',
   noPadding: false,
 };
 

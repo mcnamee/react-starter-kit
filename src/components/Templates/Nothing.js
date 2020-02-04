@@ -19,7 +19,7 @@ const Template = ({ pageTitle, children }) => (
             <Link to="/">
               <img
                 src={Logo}
-                alt="MattsSickWeb"
+                alt="ReactStarterKit"
                 className="d-block mx-auto"
                 style={{ maxWidth: '260px' }}
               />
@@ -42,7 +42,7 @@ Template.propTypes = {
 };
 
 Template.defaultProps = {
-  pageTitle: 'MattsSickWeb',
+  pageTitle: 'ReactStarterKit',
 };
 
 export default withRouter(Template);

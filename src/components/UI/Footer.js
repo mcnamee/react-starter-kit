@@ -6,7 +6,7 @@ const Footer = () => (
     <Container>
       <Row>
         <Col>
-          <p className="text-center text-secondary">&copy; MattsSickWeb. All Rights Reserved.</p>
+          <p className="text-center text-secondary">&copy; ReactStarterKit. All Rights Reserved.</p>
         </Col>
       </Row>
     </Container>

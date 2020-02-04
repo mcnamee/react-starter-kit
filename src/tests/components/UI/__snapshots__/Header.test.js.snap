@@ -35,7 +35,7 @@ exports[`<Header /> renders correctly 1`] = `
           fill="#fff"
         />
       </svg>
-      MattsSickWeb
+      ReactStarterKit
     </a>
     <button
       aria-label="Toggle navigation"
