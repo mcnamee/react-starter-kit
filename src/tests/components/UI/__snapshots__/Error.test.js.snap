@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Error /> renders correctly 1`] = `
+<div
+  className="py-5 my-5 row"
+>
+  <div
+    className="col-md-4 offset-md-4"
+  >
+    <h2
+      className="text-center"
+    >
+      Hello
+    </h2>
+    <p
+      className="text-center"
+    >
+      World
+    </p>
+  </div>
+</div>
+`;

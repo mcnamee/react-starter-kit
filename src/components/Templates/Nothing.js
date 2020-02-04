@@ -1,17 +1,48 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'reactstrap';
+import { Helmet } from 'react-helmet';
+import { Link, withRouter } from 'react-router-dom';
+import Footer from '../UI/Footer';
+import Logo from '../../assets/images/logo.png';
 
-const Template = ({ children }) => (
-  <Container>
-    <Row>
-      <Col sm="12">
-        {children}
-      </Col>
-    </Row>
-  </Container>
+const Template = ({ pageTitle, children }) => (
+  <Fragment>
+    <div>
+      <Container>
+        <Helmet>
+          <title>{pageTitle}</title>
+        </Helmet>
+
+        <Row>
+          <Col sm="12">
+            <Link to="/">
+              <img
+                src={Logo}
+                alt="MattsSickWeb"
+                className="d-block mx-auto"
+                style={{ maxWidth: '260px' }}
+              />
+            </Link>
+          </Col>
+        </Row>
+        <Row>
+          <Col sm="12">{children}</Col>
+        </Row>
+      </Container>
+    </div>
+
+    <Footer />
+  </Fragment>
 );
 
-Template.propTypes = { children: PropTypes.element.isRequired };
+Template.propTypes = {
+  pageTitle: PropTypes.string,
+  children: PropTypes.element.isRequired,
+};
 
-export default Template;
+Template.defaultProps = {
+  pageTitle: 'MattsSickWeb',
+};
+
+export default withRouter(Template);

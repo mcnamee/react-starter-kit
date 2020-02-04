@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Loading /> renders correctly 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="col-md-6 offset-md-3"
+  >
+    <div
+      className="page-is-loading"
+    >
+      <div
+        aria-valuemax={100}
+        aria-valuemin="0"
+        aria-valuenow="100"
+        className="progress-bar progress-bar-animated progress-bar-striped"
+        role="progressbar"
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
+      >
+        Loading
+      </div>
+    </div>
+  </div>
+</div>
+`;

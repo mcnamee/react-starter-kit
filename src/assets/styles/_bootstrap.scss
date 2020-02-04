@@ -1,0 +1,39 @@
+// Override Bootstrap's variables before importing
+// node_modules/bootstrap/scss/_variables.scss
+
+// Breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Jumbotron
+$jumbotron-bg: white;
+
+// Misc
+$border-radius: 3px;
+
+// Buttons
+$btn-border-radius: 3px;
+$btn-padding-x: 25px;
+$btn-padding-x-lg: 50px;
+$btn-font-size-lg: 1.15rem;
+
+// Type
+$headings-margin-bottom: 0.5em;
+$h1-font-size: 32px;
+$h2-font-size: 24px;
+$h3-font-size: 20px;
+$h4-font-size: 16px;
+
+$display1-size: 50px;
+$display2-size: 34px;
+$display3-size: 24px;
+$display4-size: 16px;
+
+// Then import Bootstrap
+@import "node_modules/bootstrap/scss/bootstrap";

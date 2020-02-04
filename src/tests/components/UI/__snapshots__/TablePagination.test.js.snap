@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TablePagination /> renders correctly 1`] = `
+<div
+  className="d-flex justify-content-between w-100"
+>
+  <p
+    className="text-muted font-italic mt-2"
+  >
+    Showing 6 of 12
+  </p>
+  <nav
+    aria-label="Pagination"
+    className=""
+  >
+    <ul
+      className="pagination"
+    >
+      <li
+        className="page-item"
+      >
+        <a
+          className="page-link"
+          href="/articles/"
+          onClick={[Function]}
+        >
+          1
+        </a>
+      </li>
+      <li
+        className="page-item"
+      >
+        <a
+          className="page-link"
+          href="/articles/2"
+          onClick={[Function]}
+        >
+          2
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
+
+exports[`<TablePagination /> renders correctly when loading 1`] = `null`;
+
+exports[`<TablePagination /> renders correctly when no pagination set 1`] = `null`;

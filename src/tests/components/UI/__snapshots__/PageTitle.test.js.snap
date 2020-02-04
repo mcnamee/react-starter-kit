@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PageTitle /> renders correctly 1`] = `
+<div
+  className="bg-dark text-white w-100 pb-2 pt-4 mb-0 rounded-0 jumbotron"
+>
+  <div
+    className="container"
+  >
+    <h1
+      className="text-center"
+    >
+      Hello World
+    </h1>
+  </div>
+</div>
+`;

@@ -1,0 +1,10 @@
+label.required {
+  &:after {
+    position: relative;
+    top: -2px;
+    right: -2px;
+    content: "*";
+    display: inline;
+    color: red;
+  }
+}

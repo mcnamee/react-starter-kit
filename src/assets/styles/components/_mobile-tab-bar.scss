@@ -1,0 +1,44 @@
+.mobile-tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $light;
+  z-index: 99;
+  box-shadow: $box-shadow;
+  text-align: center;
+  border-top: 1px solid $border-color;
+
+  .nav-pills {
+    .nav-link {
+      color: $gray-500;
+      border-radius: 0;
+      padding-left: 0.4rem;
+      padding-right: 0.4rem;
+      padding-bottom: 25px;
+      border-top: 3px solid transparent;
+
+      svg {
+        color: $gray-800;
+        display: block;
+        margin: 0 auto 5px;
+        font-size: 1.4rem;
+      }
+
+      span {
+        display: block;
+        font-size: 0.6rem;
+      }
+
+      &.active {
+        background: transparent;
+        color: #2469F6;
+        border-top: 3px solid #2469F6;
+
+        svg {
+          color: #2469F6;
+        }
+      }
+    }
+  }
+}

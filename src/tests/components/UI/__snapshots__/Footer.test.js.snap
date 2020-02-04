@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> renders correctly 1`] = `
+<footer
+  className="bg-dark py-4"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col"
+      >
+        <p
+          className="text-center text-secondary"
+        >
+          © MattsSickWeb. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+`;
