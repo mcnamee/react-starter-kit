@@ -11,7 +11,8 @@
 ### Looking for something else?
 
 - [React Native Starter Kit / Boilerplate](https://github.com/mcnamee/react-native-starter-kit)
-- [Previous Version (React (Web + Native) Starter Kit w/ Firebase)](https://github.com/mcnamee/react-native-starter-kit/tree/archive/v3)
+- [React Native Starter Kit (Expo) / Boilerplate](https://github.com/mcnamee/react-native-expo-starter-kit)
+- [Previous Version (React Starter Kit (Web + Native) w/ Firebase)](https://github.com/mcnamee/react-native-starter-kit/tree/archive/v3)
 
 ---
 
