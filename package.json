@@ -1,12 +1,11 @@
 {
-  "name": "react-starter-kit",
-  "homepage": "https://react-starter-kit.mcnam.ee",
-  "version": "0.1.0",
+  "name": "reactstarterkit",
+  "version": "0.1.0", "homepage": "https://react-starter-kit.mcnam.ee",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.26",
-    "@fortawesome/free-brands-svg-icons": "^5.12.0",
-    "@fortawesome/free-solid-svg-icons": "^5.12.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-brands-svg-icons": "^5.12.1",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.8",
     "@rematch/core": "^1.3.0",
     "@rematch/loading": "^1.2.1",
@@ -23,10 +22,10 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
-    "react-hook-form": "^4.8.2",
-    "react-redux": "^7.1.3",
+    "react-hook-form": "^4.9.7",
+    "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.1",
+    "react-scripts": "3.4.0",
     "reactstrap": "^8.4.1",
     "redux-persist": "^6.0.0"
   },
@@ -34,9 +33,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "react-scripts build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject", "predeploy": "react-scripts build", "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -56,11 +53,11 @@
   "devDependencies": {
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jest": "^23.6.0",
+    "eslint-plugin-jest": "^23.7.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.3",
     "gh-pages": "^2.2.0",
     "react-test-renderer": "^16.12.0",
-    "snapshot-diff": "^0.6.2"
+    "snapshot-diff": "^0.7.0"
   }
 }

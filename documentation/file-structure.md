@@ -11,5 +11,5 @@
     - `/routes`- wire up the router with any & all screens [Read More &rarr;](https://github.com/aksonov/react-native-router-flux)
     - `/store`- Redux Store - hooks up the stores and provides initial/template states [Read More &rarr;](https://redux.js.org/docs/basics/Store.html)
     - `/styles`- all the SCSS you could dream of
+    - `/tests` contains all of our tests, where the test file matches the resptive file from `/src`
     - `index.js` - The starting place for our app
-- `/__tests__` contains all of our tests, where the test file matches the resptive file from `/src`
