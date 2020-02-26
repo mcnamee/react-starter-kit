@@ -1,12 +1,12 @@
-<img src="/documentation/rsk-logo.jpg" alt="React Native Starter Kit" width="400" />
+<img src="documentation/rsk-logo.jpg" alt="React Native Starter Kit" width="400" />
 
-[![CryptoTip](https://img.shields.io/badge/Donate%20with-CryptoTip-blue.svg?style=flat&colorB=007bff)](https://cryptotip.it/p/mcnamee)  [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U7CE3LJYX859E)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fmcnamee%2Freact-starter-kit%2Fbadge%3Fref%3Dmaster&style=flat)](https://github.com/mcnamee/react-starter-kit/actions)  [![CryptoTip](https://img.shields.io/badge/Donate%20with-CryptoTip-blue.svg?style=flat&colorB=007bff)](https://cryptotip.it/p/mcnamee)  [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U7CE3LJYX859E)
 
 ---
 
 # React Web App
 
-<a href="https://react-starter-kit.mcnam.ee/"><img src="/documentation/web-demo.jpg" alt="Web Demo" height="50" /></a>
+<a href="https://react-starter-kit.mcnam.ee/"><img src="documentation/web-demo.jpg" alt="Web Demo" height="50" /></a>
 
 ### Looking for something else?
 
@@ -63,9 +63,9 @@ yarn run build
 
 ## 📖 Docs
 
-- [Contributing to this project](/documentation/contributing.md)
-- [Tests & testing](/documentation/testing.md)
-- [Understanding the file structure](/documentation/file-structure.md)
+- [Contributing to this project](documentation/contributing.md)
+- [Tests & testing](documentation/testing.md)
+- [Understanding the file structure](documentation/file-structure.md)
 - [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started)
 - [React documentation](https://reactjs.org/)
 - [Code Splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
