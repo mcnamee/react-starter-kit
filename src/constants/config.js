@@ -24,8 +24,8 @@ export default {
 
   // API
   apiBaseUrl: (env === 'production')
-    ? 'https://www.digitalsupply.co/wp-json/wp'
-    : 'https://www.digitalsupply.co/wp-json/wp',
+    ? 'https://digitalsupply.co/wp-json/wp'
+    : 'https://digitalsupply.co/wp-json/wp',
 
   // Google Analytics - uses a 'dev' account while we're testing
   gaTrackingId: (env === 'production') ? 'UA-84284256-2' : 'UA-84284256-1',
