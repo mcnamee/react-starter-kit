@@ -28,5 +28,4 @@ const configureStore = () => {
   return { persistor, store, dispatch };
 };
 
-
 export default configureStore;
