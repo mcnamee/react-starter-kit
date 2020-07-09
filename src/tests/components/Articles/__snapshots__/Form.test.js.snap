@@ -143,6 +143,7 @@ Array [
                     Email
                   </label>
                   <input
+                    aria-invalid={false}
                     className="form-control"
                     disabled={false}
                     id="email"
@@ -294,7 +295,7 @@ exports[`<Form /> shows loading state 1`] = `
 - First value
 + Second value
 
-@@ -118,30 +118,38 @@
+@@ -118,10 +118,16 @@
               >
                 <form
                   class=\\"\\"
@@ -311,10 +312,11 @@ exports[`<Form /> shows loading state 1`] = `
                     <label
                       class=\\"required\\"
                       for=\\"email\\"
-                    >
+@@ -129,20 +135,22 @@
                       Email
                     </label>
                     <input
+                      aria-invalid=\\"false\\"
                       class=\\"form-control\\"
 +                     disabled=\\"\\"
                       id=\\"email\\"
